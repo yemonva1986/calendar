@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="es"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1">&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1">&lt;title&gt;Calendario de Instructores 2025-2026&lt;/title&gt;</p>
+<p class="p1">&lt;style&gt;</p>
+<p class="p1">body {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-family: Arial, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background-color: #f5f5f5;</p>
+<p class="p1">}</p>
+<p class="p1">.calendar-container {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>max-width: 900px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin: 0 auto;</p>
+<p class="p1">}</p>
+<p class="p1">.month-header {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 28px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin: 20px 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 10px;</p>
+<p class="p1">}</p>
+<p class="p1">.calendar {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>grid-template-columns: repeat(5, 1fr);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>gap: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-bottom: 20px;</p>
+<p class="p1">}</p>
+<p class="p1">.day-header {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background-color: #4a5568;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 5px;</p>
+<p class="p1">}</p>
+<p class="p1">.day-cell {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border: 2px solid #e2e8f0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background-color: white;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>min-height: 120px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>transition: transform 0.2s ease, box-shadow 0.2s ease;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>flex-direction: column;</p>
+<p class="p1">}</p>
+<p class="p1">.day-cell:hover {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>transform: translateY(-2px);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>box-shadow: 0 4px 12px rgba(0,0,0,0.1);</p>
+<p class="p1">}</p>
+<p class="p1">.day-number {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>top: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>left: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color: #2d3748;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 14px;</p>
+<p class="p1">}</p>
+<p class="p1">.mini-cells {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>grid-template-columns: 1fr 1fr;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>grid-template-rows: 1fr 1fr;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>gap: 2px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-top: 25px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 5px;</p>
+<p class="p1">}</p>
+<p class="p1">.mini-cell {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border: 1px solid #cbd5e0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 3px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>min-height: 35px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 2px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>overflow-wrap: break-word;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>transition: background 0.2s;</p>
+<p class="p1">}</p>
+<p class="p1">.mini-cell.instructor { background-color: #e3f2fd; }</p>
+<p class="p1">.mini-cell.sub { background-color: #fff3e0; }</p>
+<p class="p1">.mini-cell.filled-instructor { background-color: #2b6cb0; color: white; }</p>
+<p class="p1">.mini-cell.filled-sub { background-color: #ed8936; color: white; }</p>
+<p class="p1">.mini-cell-label { font-weight: bold; text-align: center; }</p>
+<p class="p1">.buttons {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin: 20px 0;</p>
+<p class="p1">}</p>
+<p class="p1">button {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 10px 20px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin: 0 5px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background-color: #667eea;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>transition: background 0.2s;</p>
+<p class="p1">}</p>
+<p class="p1">button:hover { background-color: #764ba2; }</p>
+<p class="p1">&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div class="calendar-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1 style="text-align: center; color:#2d3748;"&gt;Calendario de Instructores 2025-2026&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="buttons"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button id="prevMonth"&gt;Mes Anterior&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button id="nextMonth"&gt;Mes Siguiente&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button id="clearData"&gt;Borrar Datos&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="monthContainer"&gt;&lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1">const months = [</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{name:"Septiembre 2025", days:30},</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{name:"Octubre 2025", days:31},</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{name:"Noviembre 2025", days:30},</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{name:"Diciembre 2025", days:31},</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{name:"Enero 2026", days:31},</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{name:"Febrero 2026", days:28},</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{name:"Marzo 2026", days:31},</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{name:"Abril 2026", days:30}</p>
+<p class="p1">];</p>
+<p class="p2"><br></p>
+<p class="p1">let currentMonthIndex = 0;</p>
+<p class="p2"><br></p>
+<p class="p1">function saveData() {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const allCells = document.querySelectorAll('.mini-cell');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const data = {};</p>
+<p class="p1"><span class="Apple-converted-space">    </span>allCells.forEach(cell =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const key = cell.dataset.key;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>data[key] = cell.innerText;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>localStorage.setItem('calendarData', JSON.stringify(data));</p>
+<p class="p1"><span class="Apple-converted-space">    </span>updateCellColors();</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function loadData() {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const data = JSON.parse(localStorage.getItem('calendarData') || '{}');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const allCells = document.querySelectorAll('.mini-cell');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>allCells.forEach(cell =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const key = cell.dataset.key;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if(data[key]) cell.innerText = data[key];</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>updateCellColors();</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function updateCellColors() {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const allCells = document.querySelectorAll('.mini-cell');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>allCells.forEach(cell =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>cell.classList.remove('filled-instructor','filled-sub');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if(cell.innerText.trim() !== '') {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if(cell.dataset.role === 'instructor') cell.classList.add('filled-instructor');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>else if(cell.dataset.role === 'sub') cell.classList.add('filled-sub');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function clearData() {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if(confirm('¿Deseas borrar todos los datos del calendario?')) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>localStorage.removeItem('calendarData');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>renderMonth();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function renderMonth() {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const month = months[currentMonthIndex];</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const container = document.getElementById('monthContainer');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>container.innerHTML = `&lt;div class="month-header"&gt;${month.name}&lt;/div&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const calendarDiv = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>calendarDiv.className = 'calendar';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>["Lunes","Martes","Miércoles","Jueves","Viernes"].forEach(day =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const header = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>header.className = 'day-header';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>header.innerText = day;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>calendarDiv.appendChild(header);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>for(let day=1; day&lt;=month.days; day++){</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const dayCell = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>dayCell.className = 'day-cell';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>dayCell.innerHTML = `&lt;div class="day-number"&gt;${day}&lt;/div&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const miniCells = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>miniCells.className = 'mini-cells';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>for(let i=1;i&lt;=4;i++){</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const mini = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>mini.className = 'mini-cell';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>mini.contentEditable = "true";</p>
+<p class="p1"><span class="Apple-converted-space">            </span>mini.dataset.key = `${month.name}-day${day}-cell${i}`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>mini.dataset.role = i&lt;=2 ? 'instructor' : 'sub';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>mini.innerHTML = i&lt;=2 ? `&lt;div class="mini-cell-label"&gt;Instructor&lt;/div&gt;` : `&lt;div class="mini-cell-label"&gt;Sub&lt;/div&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>mini.addEventListener('input', saveData);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>miniCells.appendChild(mini);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>dayCell.appendChild(miniCells);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>calendarDiv.appendChild(dayCell);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>container.appendChild(calendarDiv);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>loadData();</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">document.getElementById('prevMonth').addEventListener('click',()=&gt;{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if(currentMonthIndex&gt;0) currentMonthIndex--;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>renderMonth();</p>
+<p class="p1">});</p>
+<p class="p1">document.getElementById('nextMonth').addEventListener('click',()=&gt;{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if(currentMonthIndex&lt;months.length-1) currentMonthIndex++;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>renderMonth();</p>
+<p class="p1">});</p>
+<p class="p1">document.getElementById('clearData').addEventListener('click',clearData);</p>
+<p class="p2"><br></p>
+<p class="p1">renderMonth();</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
